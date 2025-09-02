@@ -1,0 +1,69 @@
+domain_reputation:
+  cache_settings:
+    duration_hours: 6
+    max_entries: 10000
+  reputation_apis:
+    cisco_umbrella:
+      api_key: your_cisco_api_key
+      enabled: false
+    google_safe_browsing:
+      api_key: your_google_api_key
+      enabled: false
+  trusted_lists:
+    alexa_top_1000: true
+    fortune_500: true
+    government_sites: true
+threat_intelligence:
+  sources:
+    phishtank:
+      cache_duration_hours: 12
+      enabled: true
+      url: http://data.phishtank.com/data/
+    urlhaus:
+      cache_duration_hours: 24
+      enabled: true
+      url: https://urlhaus-api.abuse.ch/v1/
+    virustotal:
+      api_key: your_virustotal_api_key_here
+      enabled: false
+      rate_limit: 4
+      timeout: 10
+  update_schedule:
+    frequency: daily
+    time: 02:00
+    timezone: UTC
+tld_intelligence:
+  high_risk_categories:
+    free_domains:
+    - .tk
+    - .ml
+    - .ga
+    - .cf
+    geographic_risk:
+    - .ru
+    - .cn
+    suspicious_new:
+    - .xyz
+    - .top
+    - .click
+    - .download
+  scoring:
+    education: 0.1
+    free_domains: 0.9
+    geographic_risk: 0.6
+    government: 0.05
+    high_reputation: 0.3
+    suspicious_new: 0.75
+    unknown: 0.5
+  trusted_categories:
+    education:
+    - .edu
+    - .ac.uk
+    - .edu.au
+    government:
+    - .gov
+    - .mil
+    high_reputation:
+    - .com
+    - .org
+    - .net
